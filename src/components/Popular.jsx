@@ -5,6 +5,7 @@ import "@splidejs/splide/dist/css/themes/splide-default.min.css";
 import Card from "./Card";
 import Gradient from "./Gradient";
 import Wrapper from "./Wrapper";
+import { Link } from "react-router-dom";
 
 function Popular() {
   const [popular, setPopular] = useState();
@@ -45,9 +46,11 @@ function Popular() {
             return (
               <SplideSlide key={recipe.id}>
                 <Card>
-                  <p>{recipe.title}</p>
-                  <img src={recipe.image} alt={recipe.title}></img>
-                  <Gradient />
+                  <Link to={"recipe/" + recipe.id}>
+                    <p>{recipe.title}</p>
+                    <img src={recipe.image} alt={recipe.title}></img>
+                    <Gradient />
+                  </Link>
                 </Card>
               </SplideSlide>
             );
