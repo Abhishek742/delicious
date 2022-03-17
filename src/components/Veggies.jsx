@@ -13,7 +13,7 @@ function Veggies() {
   //   console.log(window.innerWidth);
   // }, [window.innerWidth]);
   useEffect(() => {
-    getVeggies();
+    setTimeout(getVeggies(), 2000);
   }, []);
 
   const getVeggies = async () => {

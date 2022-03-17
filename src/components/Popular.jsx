@@ -11,7 +11,7 @@ function Popular() {
   const [popular, setPopular] = useState();
 
   useEffect(() => {
-    getPopular();
+    setTimeout(getPopular(), 2000);
   }, []);
 
   const getPopular = async () => {
