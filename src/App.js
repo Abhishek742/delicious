@@ -26,9 +26,10 @@ const Logo = styled(Link)`
   font-weight: 400;
   font-family: "Lobster Two", cursive;
   color: black;
+  margin-left: 8px;
 `;
 const Nav = styled.div`
-  padding: 4rem 0;
+  padding: 2rem 0;
   display: flex;
   justify-content: flex-start;
   align-items: center;

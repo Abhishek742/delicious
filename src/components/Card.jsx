@@ -29,6 +29,18 @@ const Card = styled.div`
     justify-content: center;
     align-items: center;
   }
+  @media (max-width: 1000px) {
+    p {
+      font-size: 1.4rem;
+      height: 50%;
+    }
+  }
+  @media (max-width: 500px) {
+    p {
+      font-size: 1.2rem;
+      height: 25%;
+    }
+  }
 `;
 
 export default Card;

@@ -24,7 +24,8 @@ function Search() {
   );
 }
 const StyledForm = styled.form`
-  margin: 0rem 20rem;
+  margin: 0rem 10%;
+  transform: translateX(-16px);
   div {
     width: 100%;
     position: relative;
@@ -34,7 +35,7 @@ const StyledForm = styled.form`
     border: none;
     width: 100%;
     background: linear-gradient(35deg, #494949, #313131);
-    font-size: 1.5rem;
+    font-size: 1rem;
     color: white;
     padding: 1rem 3rem;
     border: none;
@@ -47,6 +48,10 @@ const StyledForm = styled.form`
     left: 0%;
     transform: translate(100%, -50%);
     color: white;
+  }
+  @media (max-width: 820px) {
+    margin: 0px;
+    transform: translateX(0);
   }
 `;
 export default Search;

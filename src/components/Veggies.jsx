@@ -9,7 +9,9 @@ import { Link } from "react-router-dom";
 
 function Veggies() {
   const [veggies, setVeggies] = useState([]);
-
+  // useEffect(() => {
+  //   console.log(window.innerWidth);
+  // }, [window.innerWidth]);
   useEffect(() => {
     getVeggies();
   }, []);
@@ -27,13 +29,17 @@ function Veggies() {
       setVeggies(data.recipes);
     }
   };
-
+  const checkWidth = () => {
+    if (window.innerWidth <= 500) return "1";
+    else if (window.innerWidth <= 1000) return "2";
+    else return "3";
+  };
   return (
     <Wrapper>
       <h3>Vegetarian Picks</h3>
       <Splide
         options={{
-          perPage: 3,
+          perPage: `${checkWidth()}`,
           arrows: false,
           pagination: false,
           drag: "free",

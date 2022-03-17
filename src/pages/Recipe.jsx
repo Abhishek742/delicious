@@ -40,14 +40,19 @@ function Recipe() {
         </Button>
         {activeTab === "instructions" ? (
           <div>
-            <h3
-              dangerouslySetInnerHTML={{ __html: details && details.summary }}
-            ></h3>
-            <h3
-              dangerouslySetInnerHTML={{
-                __html: details && details.instructions,
-              }}
-            ></h3>
+            {details && details.instructions ? (
+              <h3
+                dangerouslySetInnerHTML={{
+                  __html: details && details.instructions,
+                }}
+              ></h3>
+            ) : (
+              <h3
+                dangerouslySetInnerHTML={{
+                  __html: details && details.summary,
+                }}
+              ></h3>
+            )}
           </div>
         ) : (
           <ul>
@@ -61,7 +66,7 @@ function Recipe() {
   );
 }
 const DetailWrapper = styled.div`
-  margin-top: 10rem;
+  margin-top: 5rem;
   margin-bottom: 5rem;
   display: flex;
   .active {
@@ -71,12 +76,26 @@ const DetailWrapper = styled.div`
   h2 {
     margin-bottom: 2rem;
   }
+  h3 {
+    font-size: 1rem;
+    line-height: 1.65rem;
+    font-weight: 500;
+  }
   li {
-    font-size: 1.2rem;
-    line-height: 2.5rem;
+    font-size: 1rem;
+    line-height: 1.65rem;
   }
   ul {
     margin-top: 2rem;
+  }
+  img {
+    width: 300px;
+  }
+  @media (max-width: 1000px) {
+    flex-direction: column;
+    img {
+      width: 100%;
+    }
   }
 `;
 const Button = styled.button`
@@ -86,8 +105,17 @@ const Button = styled.button`
   border: 2px solid black;
   margin-right: 2rem;
   font-weight: 600;
+  margin-bottom: 0.5rem;
+  @media (max-width: 500px) {
+    padding: 0.5rem 1rem;
+    margin-right: 1rem;
+  }
 `;
 const Info = styled.div`
-  margin-left: 10rem;
+  margin-left: 5rem;
+  @media (max-width: 1000px) {
+    margin-left: 0;
+    margin-top: 5rem;
+  }
 `;
 export default Recipe;

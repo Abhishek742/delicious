@@ -6,7 +6,7 @@ const SLink = styled(NavLink)`
   justify-content: center;
   align-items: center;
   border-radius: 50%;
-  margin-right: 2rem;
+  // margin-right: 2rem;
   text-decoration: none;
   background: linear-gradient(35deg, #494949, #313131);
   width: 6rem;
@@ -38,6 +38,28 @@ const SLink = styled(NavLink)`
     }
     h4 {
       color: white;
+    }
+  }
+  @media (max-width: 820px) {
+    width: 4.5rem;
+    height: 4.5rem;
+    svg {
+      font-size: 1.2rem;
+      margin-bottom: 4px;
+    }
+    h4 {
+      font-size: 0.6rem;
+    }
+  }
+  @media (max-width: 500px) {
+    width: 3.5rem;
+    height: 3.5rem;
+    svg {
+      font-size: 0.8rem;
+      margin-bottom: 2px;
+    }
+    h4 {
+      font-size: 0.5rem;
     }
   }
 `;

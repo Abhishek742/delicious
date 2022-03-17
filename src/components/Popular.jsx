@@ -27,13 +27,17 @@ function Popular() {
       setPopular(data.recipes);
     }
   };
-
+  const checkWidth = () => {
+    if (window.innerWidth <= 500) return "1";
+    else if (window.innerWidth <= 1000) return "3";
+    else return "4";
+  };
   return (
     <Wrapper>
       <h3>Popular Picks</h3>
       <Splide
         options={{
-          perPage: 4,
+          perPage: `${checkWidth()}`,
           arrows: false,
           pagination: false,
           drag: "free",

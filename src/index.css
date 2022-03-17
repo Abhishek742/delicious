@@ -11,9 +11,18 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  margin: 0% 15%;
+  margin: 0% 10%;
 }
 
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge and Firefox */
+body {
+  -ms-overflow-style: none; /* IE and Edge */
+  scrollbar-width: none; /* Firefox */
+}
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New",
     monospace;
@@ -30,4 +39,12 @@ h3 {
 }
 a {
   color: rgba(56, 56, 56);
+}
+@media (max-width: 500px) {
+  body {
+    margin: 0 8%;
+  }
+  h3 {
+    margin: 1rem 0;
+  }
 }
